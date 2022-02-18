@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-cale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>IOS CALCULATOR</title>
+    
+    </head> 
+<header > 
+    <div class="duz-cerceve">
+     <input type="text" class="text">  <br>
+<button class="btnGray">AC</button> 
+<button class="btnGray">+/-</button>
+<button class="btnGray">%</button>
+<button class="btnOrange">÷</button> <br>
+<button class="numbers btnDarkGray">7</button> 
+<button class="numbers btnDarkGray">8</button> 
+<button class="numbers btnDarkGray">9</button> 
+<button class="btnOrange">×</button> <br>
+<button class="numbers btnDarkGray">4</button> 
+<button class="numbers btnDarkGray">5</button> 
+<button class="numbers btnDarkGray">6</button> 
+<button class="btnOrange">-</button> <br>
+<button class="numbers btnDarkGray">1</button>
+<button class="numbers btnDarkGray">2</button>
+<button class="numbers btnDarkGray">3</button>
+<button class="btnOrange">+</button> <br>
+<button class="numbers btnSifir">0</button>
+<button class="numbers btnDarkGray">.</button>
+<button class="btnOrange">=</button> <br> 
+</div>
+</header>
+</html>
+<script>
+    var numbers = document.getElementsByClassName("numbers");
+    console.log(numbers);
+    for (let index = 0; index < numbers.length; index++) {
+        numbers[index].addEventListener("click", function(params) {
+            alert(numbers[index].innerText);
+        })        
+    }
+</script>

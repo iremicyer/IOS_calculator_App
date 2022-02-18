@@ -1,0 +1,67 @@
+
+body{
+    background-color: white;
+  text-align: center;
+padding: 50px;
+position: relative; 
+left: 300px;
+}
+.duz-cerceve{
+	border:3px solid black;
+border-radius: 20px;
+	width:350px;
+	height:600px;
+    text-align: center;
+    background-color: black;
+}
+
+.btnGray{
+    border: gray;
+    border-radius: 50%;
+    font-size: 35px;
+    background-color: gray;
+    width: 70px;
+    height: 70px;
+
+  
+ 
+}
+
+.btnOrange{
+    border-radius: 50%;
+    font-size: 50px;
+    background-color: orange;
+   width: 70px;
+   height: 70px;
+   color: white;
+   border: orange;
+}
+.btnDarkGray{
+    border-radius: 50%;
+    font-size: 50px;
+    background-color: rgb(66, 65, 65);
+   width: 70px;
+   height: 70px;
+   color: white;
+   border: rgba(66, 65, 65);
+    
+}
+.btnSifir{
+    border-radius: 20%;
+    font-size: 50px;
+    background-color: rgb(66, 65, 65);
+   color: white;
+   text-align: left;
+   width: 145px;
+}
+.text{
+    background-color: black;
+    width: 290px;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    border: black;
+
+}
+
