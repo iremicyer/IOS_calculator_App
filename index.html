@@ -72,8 +72,8 @@ var sonSayi = 0;
             document.querySelector('#demo').style.fontSize = "30px";
         });
 
-var equalOperator = document.getElementsByClassName("btnOrange")[4];
-equalOperator.addEventListener("click", function(params) {
+           var equalOperator = document.getElementsByClassName("btnOrange")[4];
+            equalOperator.addEventListener("click", function(params) {
             if (document.getElementById('demo').value.includes("+")) {
                 document.getElementById('demo').value = Number(document.getElementById('demo').value.split("+")[0]) + Number(document.getElementById('demo').value.split("+")[1])
             }
@@ -81,12 +81,15 @@ equalOperator.addEventListener("click", function(params) {
                 document.getElementById('demo').value =Number(document.getElementById('demo').value.split("-")[0]) - Number(document.getElementById('demo').value.split("-")[1])
 
             }
-           else if(document.getElementById('demo').value.includes('*')){
-               document.getElementById('demo').value = Number(document.getElementById('demo').value.split("*")[0]) * Number(document.getElementById('demo').value.split('*')[1])
-           }
-           else if(document.getElementById('demo').value.includes('/')){
-               document.getElementById('demo').value = Number(document.getElementById('demo').value.split('/')[0]) / Number(document.getElementById('demo').value.split('/')[1])
-           }
+         
+            if(document.getElementById('demo').value.includes("*")){
+                document.getElementById('demo').value =Number(document.getElementById('demo').value.split("*")[0]) * Number(document.getElementById('demo').value.split("*")[1])
+
+            }
+            else if(document.getElementById('demo').value.includes("/")){
+                document.getElementById('demo').value =Number(document.getElementById('demo').value.split("/")[0]) / Number(document.getElementById('demo').value.split("/")[1])
+
+            }
            
             document.querySelector('#demo').style.color = "white";
             document.querySelector('#demo').style.fontSize = "30px";
