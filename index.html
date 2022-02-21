@@ -40,13 +40,27 @@
     console.log(numbers);
     for (let index = 0; index < numbers.length; index++) {
         numbers[index].addEventListener("click", function(params) {
-            // document.getElementById("demo").value = numbers[index].innerText;
-            $('#demo').val(numbers[index].innerText);
+            document.getElementById('demo').value =numbers[index].innerText;
             document.querySelector('#demo').style.color = "white";
             document.querySelector('#demo').style.fontSize = "20px";
 
         })   
     }
+    
+    var operator = document.getElementsByClassName("btnOrange");
+    console.log(operator);
+    for (let index = 0; index < operator.length; index++) {
+        operator[index].addEventListener("click", function(params) {
+            document.getElementById('demo').value =numbers[index].innerText;
+            document.querySelector('#demo').style.color = "white";
+            document.querySelector('#demo').style.fontSize = "20px";
+
+        })   
+    }  
+    var acOperator = document.getElementsByClassName("btnGray")[0];
+    acOperator.addEventListener("click", ()=>{
+        document.getElementById('demo').value = 0;
+
+    })
 
 </script>
-
