@@ -35,10 +35,6 @@
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-var sayi = 0;
-var ilkSayi = 0;
-var islem = "";
-var sonSayi = 0;
     var numbers = document.getElementsByClassName("numbers");
     console.log(numbers);
     for (let index = 0; index < numbers.length; index++) {
@@ -63,9 +59,9 @@ var sonSayi = 0;
        
     }
     
-    // var acOperator = document.getElementsByClassName("xx");
+  
     var acOperator = document.getElementsByClassName("btnGray")[0];
-// alert(acOperator);
+
         acOperator.addEventListener("click", function(params) {
             document.getElementById('demo').value = 0;
             document.querySelector('#demo').style.color = "white";
@@ -77,9 +73,7 @@ var sonSayi = 0;
             if (document.getElementById('demo').value.includes("+")) {
                 document.getElementById('demo').value = Number(document.getElementById('demo').value.split("+")[0]) + Number(document.getElementById('demo').value.split("+")[1])
             }
-            // else if(document.getElementById('demo').value.includes("-")){
-            //     document.getElementById('demo').value = Number
-            // }
+          
 
 
             else if(document.getElementById('demo').value.includes("-")){
