@@ -11,7 +11,7 @@
 <header > 
     <div class="duz-cerceve">
      <input type="text" class="text" id="demo"/>  <br>
-<button class="btnGray">AC</button> 
+<button class="btnGray xx">AC</button> 
 <button class="btnGray">+/-</button>
 <button class="btnGray">%</button>
 <button class="btnOrange">÷</button> <br>
@@ -35,7 +35,8 @@
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-
+var first;
+var second;
     var numbers = document.getElementsByClassName("numbers");
     console.log(numbers);
     for (let index = 0; index < numbers.length; index++) {
@@ -51,16 +52,23 @@
     console.log(operator);
     for (let index = 0; index < operator.length; index++) {
         operator[index].addEventListener("click", function(params) {
-            document.getElementById('demo').value =numbers[index].innerText;
+            document.getElementById('demo').value =operator[index].innerText;
             document.querySelector('#demo').style.color = "white";
             document.querySelector('#demo').style.fontSize = "20px";
 
         })   
-    }  
-    var acOperator = document.getElementsByClassName("btnGray")[0];
-    acOperator.addEventListener("click", ()=>{
-        document.getElementById('demo').value = 0;
+    }
+    
+    var acOperator = document.getElementsByClassName("xx");
+    // var acOperator = document.getElementsByClassName("btnGray")[0];
+// alert(acOperator);
+    for (let index = 0; index < acOperator.length; index++) {
+        acOperator[index].addEventListener("click", function(params) {
+            document.getElementById('demo').value =0;
+            document.querySelector('#demo').style.color = "white";
+            document.querySelector('#demo').style.fontSize = "20px";
 
-    })
-
+        })   
+    }
+  
 </script>
