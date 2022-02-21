@@ -35,9 +35,10 @@
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-var first;
-var second;
-
+var sayi = 0;
+var ilkSayi = 0;
+var islem = "";
+var sonSayi = 0;
     var numbers = document.getElementsByClassName("numbers");
     console.log(numbers);
     for (let index = 0; index < numbers.length; index++) {
@@ -68,8 +69,49 @@ var second;
             document.getElementById('demo').value =0;
             document.querySelector('#demo').style.color = "white";
             document.querySelector('#demo').style.fontSize = "20px";
-
         })   
     }
- 
+
+
+var ilkSayi = Document.getElementsByClassName("demo").value;
+var sayi = document.getElementsByClassName("demo").value;
+var sonSayi = ilkSayi+sayi;
+
+function Hesapla (s){
+    if(islem == "=");
+    islem = "";
+}
+if(islem != ""){
+    document.getElementsByClassName("demo").value = "";
+}
+document.getElementsByClassName("demo").value+=s;
+sayi = document.getElementsByClassName("demo").value;
+
+function HafizayaAl(p){
+    ilkSayi = Document.getElementsByClassName("demo").value;
+    sayi = 0;
+    islem = p;
+}
+function temizle(){
+    document.getElementsByClassName("demo").value = "";
+    ilkSayi = sayi = 0;
+}
+
+function Hesapla(){
+    var sonuc = 0;
+    if(islem == "/")
+    sonuc = ilkSayi/sayi;
+    if(islem == "*")
+    sonuc = ilkSayi*sayi;
+    if(islem == "+")
+    sonuc = ilkSayi+sayi;
+    if(islem == "-")
+    sonuc = ilkSayi-sayi
+    temizle();
+    document.getElementsByClassName("demo").value = sonuc;
+    islem = "=";
+
+
+
+}
 </script>
