@@ -1,98 +1,120 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-cale=1">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>IOS CALCULATOR</title>
-    
-    </head> 
-<header > 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-cale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>IOS CALCULATOR</title>
+
+</head>
+<header>
     <div class="duz-cerceve">
-     <input type="text" class="text" id="demo"/>  <br>
-<button class="btnGray">AC</button> 
-<button class="btnGray">+/-</button>
-<button class="btnGray">%</button>
-<button class="btnOrange">÷</button> <br>
-<button class="numbers btnDarkGray">7</button> 
-<button class="numbers btnDarkGray">8</button> 
-<button class="numbers btnDarkGray">9</button> 
-<button class="btnOrange">×</button> <br>
-<button class="numbers btnDarkGray">4</button> 
-<button class="numbers btnDarkGray">5</button> 
-<button class="numbers btnDarkGray">6</button> 
-<button class="btnOrange">-</button> <br>
-<button class="numbers btnDarkGray">1</button>
-<button class="numbers btnDarkGray">2</button>
-<button class="numbers btnDarkGray">3</button>
-<button class="btnOrange">+</button> <br>
-<button class="numbers btnSifir">0</button>
-<button class="numbers btnDarkGray">.</button>
-<button class="btnOrange">=</button> <br> 
-</div>
+        <input type="text" class="text" id="demo" /> <br>
+        <button class="btnGray">AC</button>
+        <button class="btnGray">+/-</button>
+        <button class="btnGray">%</button>
+        <button class="btnOrange">÷</button> <br>
+        <button class="numbers btnDarkGray">7</button>
+        <button class="numbers btnDarkGray">8</button>
+        <button class="numbers btnDarkGray">9</button>
+        <button class="btnOrange">×</button> <br>
+        <button class="numbers btnDarkGray">4</button>
+        <button class="numbers btnDarkGray">5</button>
+        <button class="numbers btnDarkGray">6</button>
+        <button class="btnOrange">-</button> <br>
+        <button class="numbers btnDarkGray">1</button>
+        <button class="numbers btnDarkGray">2</button>
+        <button class="numbers btnDarkGray">3</button>
+        <button class="btnOrange">+</button> <br>
+        <button class="numbers btnSifir">0</button>
+        <button class="numbers btnDarkGray">.</button>
+        <button class="btnOrange">=</button> <br>
+    </div>
 </header>
+
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var numbers = document.getElementsByClassName("numbers");
     console.log(numbers);
     for (let index = 0; index < numbers.length; index++) {
-        numbers[index].addEventListener("click", function(params) {
+        numbers[index].addEventListener("click", function (params) {
+            if(document.getElementById('demo').value == "0"){
+                document.getElementById('demo').value = numbers[index].innerText;
+            }
+            else{
             document.getElementById('demo').value += numbers[index].innerText;
+            }
             document.querySelector('#demo').style.color = "white";
             document.querySelector('#demo').style.fontSize = "40px";
-
-        })   
+          
+        })
     }
-    
+    let hasOperator = false;
     var operator = document.getElementsByClassName("btnOrange");
     console.log(operator);
     for (let index = 0; index < operator.length; index++) {
         if (operator[index].innerText != "=") {
-            operator[index].addEventListener("click", function(params) {
-            document.getElementById('demo').value += operator[index].innerText;
-            document.querySelector('#demo').style.color = "white";
-            document.querySelector('#demo').style.fontSize = "40px";
-        })   
+            operator[index].addEventListener("click", function (params) {
+                console.log(hasOperator);
+                if (hasOperator) {
+                    alert("2 operator kullanılamaz!");
+                    return;
+                }
+                hasOperator = true;
+                document.getElementById('demo').value += operator[index].innerText;
+                x = operator[index].innerText;
+                y = operator[index].innerText;
+                document.querySelector('#demo').style.color = "white";
+                document.querySelector('#demo').style.fontSize = "40px";
+                // sum = document.getElementById('demo').value;
+                //    if(sum.includes("++")|| sum.includes("--")||sum.includes("××"|| sum.includes("÷÷"))) {
+                //        alert("Yan yana birden fazla operatör gelemez!");
+                //    }
+                // if (sum.includes(x + y)) {
+                //     alert("!!!!!!");
+                // }
+            })
         }
-       
+
     }
-    
-  
+
+
     var acOperator = document.getElementsByClassName("btnGray")[0];
 
-        acOperator.addEventListener("click", function(params) {
-            document.getElementById('demo').value = 0;
-            document.querySelector('#demo').style.color = "white";
-            document.querySelector('#demo').style.fontSize = "40px";
-      
-        });
+    acOperator.addEventListener("click", function (params) {
+        document.getElementById('demo').value = 0;
+        document.querySelector('#demo').style.color = "white";
+        document.querySelector('#demo').style.fontSize = "40px";
 
-           var equalOperator = document.getElementsByClassName("btnOrange")[4];
-            equalOperator.addEventListener("click", function(params) {
-            if (document.getElementById('demo').value.includes("+")) {
-                document.getElementById('demo').value = Number(document.getElementById('demo').value.split("+")[0]) + Number(document.getElementById('demo').value.split("+")[1])
-            }
-          
+    });
 
+    var equalOperator = document.getElementsByClassName("btnOrange")[4];
 
-            else if(document.getElementById('demo').value.includes("-")){
-                document.getElementById('demo').value =Number(document.getElementById('demo').value.split("-")[0]) - Number(document.getElementById('demo').value.split("-")[1])
+    equalOperator.addEventListener("click", function (params) {
+        hasOperator = false;
+        if (document.getElementById('demo').value.includes("+")) {
+            document.getElementById('demo').value = Number(document.getElementById('demo').value.split("+")[0]) + Number(document.getElementById('demo').value.split("+")[1])
 
-            }
-         
-            else if(document.getElementById('demo').value.includes("×")){
-                document.getElementById('demo').value =Number(document.getElementById('demo').value.split("×")[0]) * Number(document.getElementById('demo').value.split("×")[1])
+        }
 
-            }
-            else if(document.getElementById('demo').value.includes("÷")){
-                document.getElementById('demo').value =Number(document.getElementById('demo').value.split("÷")[0]) / Number(document.getElementById('demo').value.split("÷")[1])
+        else if (document.getElementById('demo').value.includes("-")) {
+            document.getElementById('demo').value = Number(document.getElementById('demo').value.split("-")[0]) - Number(document.getElementById('demo').value.split("-")[1])
 
-            }
-           
-            document.querySelector('#demo').style.color = "white";
-            document.querySelector('#demo').style.fontSize = "40px";
-        });
+        }
+
+        else if (document.getElementById('demo').value.includes("×")) {
+            document.getElementById('demo').value = Number(document.getElementById('demo').value.split("×")[0]) * Number(document.getElementById('demo').value.split("×")[1])
+
+        }
+        else if (document.getElementById('demo').value.includes("÷")) {
+            document.getElementById('demo').value = Number(document.getElementById('demo').value.split("÷")[0]) / Number(document.getElementById('demo').value.split("÷")[1])
+
+        }
+
+        document.querySelector('#demo').style.color = "white";
+        document.querySelector('#demo').style.fontSize = "40px";
+    });
 
 </script>
