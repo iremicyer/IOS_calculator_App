@@ -10,7 +10,7 @@
     </head> 
 <header > 
     <div class="duz-cerceve">
-     <input type="text" class="text">  <br>
+     <input type="text" class="text" id="demo"/>  <br>
 <button class="btnGray">AC</button> 
 <button class="btnGray">+/-</button>
 <button class="btnGray">%</button>
@@ -33,12 +33,20 @@
 </div>
 </header>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+
     var numbers = document.getElementsByClassName("numbers");
     console.log(numbers);
     for (let index = 0; index < numbers.length; index++) {
         numbers[index].addEventListener("click", function(params) {
-            alert(numbers[index].innerText);
-        })        
+            // document.getElementById("demo").value = numbers[index].innerText;
+            $('#demo').val(numbers[index].innerText);
+            document.querySelector('#demo').style.color = "white";
+            document.querySelector('#demo').style.fontSize = "20px";
+
+        })   
     }
+
 </script>
+
