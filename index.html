@@ -59,7 +59,7 @@
             operator[index].addEventListener("click", function (params) {
                 console.log(hasOperator);
                 if (hasOperator) {
-                    alert("2 operator kullanılamaz!");
+                    alert("2 operators cannot be used!");
                     return;
                 }
                 hasOperator = true;
@@ -68,13 +68,8 @@
                 y = operator[index].innerText;
                 document.querySelector('#demo').style.color = "white";
                 document.querySelector('#demo').style.fontSize = "40px";
-
             })
-        }
-
-    }
-
-
+        }}
     var acOperator = document.getElementsByClassName("btnGray")[0];
 
     acOperator.addEventListener("click", function (params) {
@@ -84,13 +79,6 @@
 
     });
 
-
-
-
-
-
-
-
     let artiEksi = document.getElementsByClassName("btnGray")[1];
     artiEksi.addEventListener("click", function (params) {
         document.getElementById('demo').value = Number(document.getElementById('demo').value.split("+/-")[0]) * -1;
@@ -98,7 +86,6 @@
         document.querySelector('#demo').style.fontSize = "40px";
 
     });
-
 
     let yuzdeOperator = document.getElementsByClassName("btnGray")[2];
 
@@ -108,12 +95,6 @@
         document.querySelector('#demo').style.fontSize = "40px";
 
     });
-
-
-
-
-
-
 
     var equalOperator = document.getElementsByClassName("btnOrange")[4];
 
@@ -137,20 +118,6 @@
             document.getElementById('demo').value = Number(document.getElementById('demo').value.split("÷")[0]) / Number(document.getElementById('demo').value.split("÷")[1])
 
         }
-
-
-        // else if (document.getElementById('demo').value.includes("%")) {
-        //     document.getElementById('demo').value = Number(document.getElementById('demo').value.split("%")[0])*0.01;
-
-        // }
-        // else if (document.getElementById('demo').value.includes("+/-")) {
-        //   if( document.getElementById('demo').value = Number(document.getElementById('demo').value.split("+/-")[0])) {
-
-
-        //   }
-
-        // }
-
 
         document.querySelector('#demo').style.color = "white";
         document.querySelector('#demo').style.fontSize = "40px";
